@@ -1,3 +1,3 @@
 # MyTinyWeb
  
-# a practical springboot project
+a practical springboot project
