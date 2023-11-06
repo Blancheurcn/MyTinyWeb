@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/demo")
 public class WebController {
 	@Autowired
 	private UserRepository userRepository;
@@ -22,7 +21,7 @@ public class WebController {
 	}
 
 	@GetMapping( "/")
-	public String showFrom(){
+	public String showFrom(MyTinyUser user){
 		return  "initial";
 	}
 
@@ -35,8 +34,11 @@ public class WebController {
 		return "initial";
 	}
 
-	@GetMapping("registerButton")
+	@GetMapping("register")
 	public String ToRegister(MyTinyUser user){
 		return "register";
 	}
+
+	@GetMapping("login")
+	public String ToLogin(MyTinyUser user){return  "login";}
 }

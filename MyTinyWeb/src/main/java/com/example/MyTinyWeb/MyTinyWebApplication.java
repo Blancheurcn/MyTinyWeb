@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MyTinyWebApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws Error {
 		SpringApplication.run(MyTinyWebApplication.class, args);
 	}
 

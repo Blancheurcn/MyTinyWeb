@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
             display: inline-block;
             padding: 10px 20px;
             background-color: #4CAF50;
-            color: white;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
@@ -20,7 +19,7 @@
     </style>
 </head>
 <body>
-<a th:href="@{/registerButton}"><button>Register</button></a>
-<a th:href="@{/loginButton}"><button>Login</button></a>
+<a th:href="@{/register}" class="button"><button>Register</button></a>
+<a th:href="@{/login}"class="button"><button>Login</button></a>
 </body>
 </html>
