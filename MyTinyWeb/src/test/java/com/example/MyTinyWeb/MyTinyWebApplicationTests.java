@@ -1,4 +1,4 @@
-package com.example.demo2;
+package com.example.MyTinyWeb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

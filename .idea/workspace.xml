@@ -57,19 +57,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Demo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="MyTinyWeb" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo2.Demo2Application" />
@@ -89,6 +76,7 @@
       <workItem from="1698983502058" duration="1032000" />
       <workItem from="1699226782334" duration="2677000" />
       <workItem from="1699230051705" duration="649000" />
+      <workItem from="1699286442946" duration="18000" />
     </task>
     <servers />
   </component>
