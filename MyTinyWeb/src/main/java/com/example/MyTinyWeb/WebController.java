@@ -1,6 +1,7 @@
 package com.example.MyTinyWeb;
 
 import jakarta.validation.Valid;
+import org.hibernate.cache.internal.StandardTimestampsCacheFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,15 +32,6 @@ public class WebController implements WebMvcConfigurer {
 		return "MyTinyWeb";
 	}
 
-	@PostMapping("login")
-	public String CheckLogin(@ModelAttribute @Valid MyTinyUser myTinyUser, BindingResult bindingResult){
-		if (bindingResult.hasErrors()) {
-			return "login";
-		}
-		return "MyTinyWeb";
-
-	}
-
 	@GetMapping( "/")
 	public String showFrom(MyTinyUser user){
 		return  "initial";
@@ -61,10 +53,20 @@ public class WebController implements WebMvcConfigurer {
 		return "register";
 	}
 
-
 	@GetMapping("login")
 	public String ToLogin(Model model){
-		model.addAttribute("list",myTinyUserRepository.findAll());
 		return "login";
+	}
+
+	@PostMapping("login")
+	public String CheckLogin(String name,String password,Model model){
+		MyTinyUser user = myTinyUserRepository.findByNameAndPassword(name, password);
+		if (user == null) {
+			return "login";
+		} else {
+			model.addAttribute("list",myTinyUserRepository.findAll());
+			return "MyTinyWeb";
+		}
+
 	}
 }

@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MyTinySQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-
+<h1>MyTinySQL</h1>
+<div th:if="${list}">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>账号</th>
+            <th>密码</th>
+            <th>性别</th>
+        </tr>
+        <tr th:each="user : ${list}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td>
+                <span th:if="${user.gender == 'male'}">男</span>
+                <span th:if="${user.gender == 'female'}">女</span>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
