@@ -1,22 +1,71 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        form {
+            border: 2px solid #ddd;
+            background-color: #fff;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+        }
+        tr, td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        input[type="radio"] {
+            margin-top: 5px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
 <body>
 <form action="#" th:action="@{register}" th:object="${myTinyUser}" method="post">
     <table>
         <tr>
             <td>用户名:</td>
             <td><input type="text" th:field="*{name}" /></td>
-            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+            <td th:if="${#fields.hasErrors('name')}" class="error" th:errors="*{name}">Name Error</td>
         </tr>
         <tr>
             <td>邮箱:</td>
             <td><input type="text" th:field="*{email}" /></td>
-            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</td>
+            <td th:if="${#fields.hasErrors('email')}" class="error" th:errors="*{email}">Email Error</td>
         </tr>
         <tr>
             <td>密码:</td>
-            <td><input type="text" th:field="*{password}" /></td>
-            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
+            <td><input type="password" th:field="*{password}" /></td>
+            <td th:if="${#fields.hasErrors('password')}" class="error" th:errors="*{password}">Password Error</td>
         </tr>
         <tr>
             <td>性别:</td>
@@ -28,10 +77,9 @@
             </td>
         </tr>
         <tr>
-            <td><button type="submit">Submit</button></td>
+            <td colspan="2"><button type="submit">Submit</button></td>
         </tr>
     </table>
 </form>
-
 </body>
 </html>
