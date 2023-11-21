@@ -45,7 +45,6 @@ public class WebController implements WebMvcConfigurer {
 		}
 			myTinyUserRepository.save(myTinyUser);
 			return "initial";
-
 	}
 
 	@GetMapping("register")

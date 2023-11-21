@@ -50,6 +50,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -77,6 +78,9 @@
       <workItem from="1699226782334" duration="2677000" />
       <workItem from="1699230051705" duration="649000" />
       <workItem from="1699286442946" duration="18000" />
+      <workItem from="1699417442266" duration="25000" />
+      <workItem from="1699977038909" duration="13000" />
+      <workItem from="1700404739664" duration="9000" />
     </task>
     <servers />
   </component>
